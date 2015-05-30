@@ -1,9 +1,11 @@
+
+
 function initialize(lat, lng) {
   var mapCanvas = document.getElementById('map-canvas');
   var myLatlng = new google.maps.LatLng(lat, lng)
   var mapOptions = {
     center: myLatlng,
-    zoom: 8,
+    zoom: 16,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
   var map = new google.maps.Map(mapCanvas, mapOptions);
