@@ -1,6 +1,13 @@
-function makeMarkers(){
+function makeMarkers(map){
   $.getJSON("https://data.cityofnewyork.us/resource/sxx4-xhzg.json", function(data){
-    console.log(data);
+    for (var i = 0; i < data.length; i++){
+      var myLatlng = new google.maps.LatLng(data[i].latitude, data[i].longitude)
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Hello World!'
+      });
+    };
   });
 }
 
@@ -19,5 +26,5 @@ function initialize(lat, lng) {
       map: map,
       title: 'Hello World!'
   });
-  makeMarkers();
+  makeMarkers(map);
 }
