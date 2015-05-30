@@ -1,3 +1,3 @@
 $(document).ready(function(){
-  initialize();
+  initialize(44.5403, -78.5463);
 })
