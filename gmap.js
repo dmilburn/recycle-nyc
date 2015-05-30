@@ -1,4 +1,8 @@
-
+function makeMarkers(){
+  $.getJSON("https://data.cityofnewyork.us/resource/sxx4-xhzg.json", function(data){
+    console.log(data);
+  });
+}
 
 function initialize(lat, lng) {
   var mapCanvas = document.getElementById('map-canvas');
@@ -15,4 +19,5 @@ function initialize(lat, lng) {
       map: map,
       title: 'Hello World!'
   });
+  makeMarkers();
 }
