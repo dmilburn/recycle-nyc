@@ -1,3 +1,5 @@
+var map;
+
 function makeMarkers(map){
   $.getJSON("https://data.cityofnewyork.us/resource/sxx4-xhzg.json", function(data){
     for (var i = 0; i < data.length; i++){
@@ -20,6 +22,8 @@ function geocodeLocation(){
   geocoder.geocode( { 'address': address}, function(results, status) {
     location = results[0].geometry.location;
     initialize(location);
+    makeMarkers(map);
+
   });
 }
 
@@ -34,12 +38,11 @@ function initialize(myLatlng) {
     zoom: 16,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
-  var map = new google.maps.Map(mapCanvas, mapOptions);
+  map = new google.maps.Map(mapCanvas, mapOptions);
 
   var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
       title: 'Hello World!'
   });
-  makeMarkers(map);
 }
