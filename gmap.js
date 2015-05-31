@@ -26,10 +26,6 @@ function initialize(){
   });
 }
 
-// perform geocoding
-// make map
-// create recycling markers
-
 function createMap(myLatlng) {
   var mapCanvas = document.getElementById('map-canvas');
   var mapOptions = {
