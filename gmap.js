@@ -16,15 +16,18 @@ function markBins(map){
 function initialize(){
   var address = document.getElementById("address").value;
   var boroughForm = document.getElementById('borough');
+
   var borough = boroughForm.options[boroughForm.selectedIndex].text;
+  fullAddress = address + ", " + borough + ", NY, US"
   var location;
   var geocoder = new google.maps.Geocoder();
-  geocoder.geocode( { 'address': address}, function(results, status) {
+  geocoder.geocode( { 'address': fullAddress}, function(results, status) {
     location = results[0].geometry.location;
     createMap(location);
     markBins(map);
   });
 }
+
 
 function createMap(myLatlng) {
   var mapCanvas = document.getElementById('map-canvas');
