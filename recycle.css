@@ -1,4 +1,14 @@
 #map-canvas {
   width: 500px;
   height: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+title{
+
+}
+
+* {
+  text-align: center;
 }
