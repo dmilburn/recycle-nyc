@@ -7,10 +7,13 @@ $(document).ready(function(){
     var address = document.getElementById("address").value;
     var boroughForm = document.getElementById('borough');
     var borough = boroughForm.options[boroughForm.selectedIndex].text;
+    var location;
     $('#map-canvas').show();
-    initialize(40.696110, -73.995235);
-
-
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      location = results[0].geometry.location;
+      initialize(location);
+    });
   });
 
 })

@@ -11,9 +11,8 @@ function makeMarkers(map){
   });
 }
 
-function initialize(lat, lng) {
+function initialize(myLatlng) {
   var mapCanvas = document.getElementById('map-canvas');
-  var myLatlng = new google.maps.LatLng(lat, lng)
   var mapOptions = {
     center: myLatlng,
     zoom: 16,
