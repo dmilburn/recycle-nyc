@@ -11,6 +11,18 @@ function makeMarkers(map){
   });
 }
 
+function geocodeLocation(){
+  var address = document.getElementById("address").value;
+  var boroughForm = document.getElementById('borough');
+  var borough = boroughForm.options[boroughForm.selectedIndex].text;
+  var location;
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    location = results[0].geometry.location;
+    initialize(location);
+  });
+}
+
 // perform geocoding
 // make map
 // create recycling markers
