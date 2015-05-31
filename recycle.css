@@ -5,8 +5,9 @@
   margin-left: auto;
 }
 
-title{
-
+#title{
+  color: #198D19;
+  font-size: 3em;
 }
 
 * {
