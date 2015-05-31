@@ -13,7 +13,7 @@ function markBins(map){
   });
 }
 
-function geocodeLocation(){
+function initialize(){
   var address = document.getElementById("address").value;
   var boroughForm = document.getElementById('borough');
   var borough = boroughForm.options[boroughForm.selectedIndex].text;
@@ -23,7 +23,6 @@ function geocodeLocation(){
     location = results[0].geometry.location;
     createMap(location);
     markBins(map);
-
   });
 }
 
