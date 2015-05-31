@@ -4,9 +4,11 @@ function markBins(map){
   $.getJSON("https://data.cityofnewyork.us/resource/sxx4-xhzg.json", function(data){
     for (var i = 0; i < data.length; i++){
       var myLatlng = new google.maps.LatLng(data[i].latitude, data[i].longitude)
+      var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
       var marker = new google.maps.Marker({
           position: myLatlng,
           map: map,
+          icon: 'recycle.png',
           title: 'Hello World!'
       });
     };
@@ -41,6 +43,7 @@ function createMap(myLatlng) {
   var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
+      icon: 'youarehere.png',
       title: 'Hello World!'
   });
 }
