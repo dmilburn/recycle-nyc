@@ -1,6 +1,6 @@
 var map;
 
-function makeMarkers(map){
+function markBins(map){
   $.getJSON("https://data.cityofnewyork.us/resource/sxx4-xhzg.json", function(data){
     for (var i = 0; i < data.length; i++){
       var myLatlng = new google.maps.LatLng(data[i].latitude, data[i].longitude)
@@ -22,7 +22,7 @@ function geocodeLocation(){
   geocoder.geocode( { 'address': address}, function(results, status) {
     location = results[0].geometry.location;
     initialize(location);
-    makeMarkers(map);
+    markBins(map);
 
   });
 }
