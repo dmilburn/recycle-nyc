@@ -21,7 +21,7 @@ function geocodeLocation(){
   var geocoder = new google.maps.Geocoder();
   geocoder.geocode( { 'address': address}, function(results, status) {
     location = results[0].geometry.location;
-    initialize(location);
+    createMap(location);
     markBins(map);
 
   });
@@ -31,7 +31,7 @@ function geocodeLocation(){
 // make map
 // create recycling markers
 
-function initialize(myLatlng) {
+function createMap(myLatlng) {
   var mapCanvas = document.getElementById('map-canvas');
   var mapOptions = {
     center: myLatlng,
