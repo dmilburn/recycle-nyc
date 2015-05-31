@@ -11,6 +11,10 @@ function makeMarkers(map){
   });
 }
 
+// perform geocoding
+// make map
+// create recycling markers
+
 function initialize(myLatlng) {
   var mapCanvas = document.getElementById('map-canvas');
   var mapOptions = {
