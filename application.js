@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   $('#search').on('submit', function(event){
     event.preventDefault();
-    console.log("hello");
+    var address = document.getElementById("address").value;
   });
 
 })
