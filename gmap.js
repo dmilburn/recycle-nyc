@@ -13,7 +13,7 @@ function markBins(map){
   });
 }
 
-function initialize(){
+function initializeMap(){
   var address = document.getElementById("address").value;
   var boroughForm = document.getElementById('borough');
 
